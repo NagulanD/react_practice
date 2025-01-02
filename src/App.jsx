@@ -109,19 +109,55 @@
 // }
 
 //export default App
-import { Component } from "react" 
-import './App.css'
-import Task2 from './Task2'
+// import { Component } from "react" 
+// import './App.css'
+// import Task2 from './Task2'
 
-class App extends Component{
+// class App extends Component{
 
-  render(){
+//   render(){
+//     return(
+//       <> 
+//         <Task2 />
+//       </>
+//     )
+//   }
+// }
+
+// export default App
+
+// import React from 'react'
+// import Hen from './Hen'
+// const App = () =>{
+//   return (
+//     <div>
+//       <Hen name="heat"/>
+//     </div>
+//   )
+// }
+// export default App
+
+import React, { createContext, useState } from "react"
+
+import Hen from "./Hen";
+export let nameContext=createContext();
+function App(){
+
+    let [colour,setColour]=useState("black");
+    let [bg,setBg]=useState("white")
+
+    function name(){
+      setColour(colour==="black"? "white": "black")
+      setBg(bg==="white"? "Black" : "white")
+    }
+    
     return(
-      <> 
-        <Task2 />
+      <>
+      <nameContext.Provider value={{colour,bg}}>
+        <Hen></Hen> 
+        <button onClick={name}>Click</button> 
+      </nameContext.Provider>
       </>
     )
-  }
 }
-
-export default App
+export default App;
