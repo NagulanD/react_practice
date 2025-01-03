@@ -15,7 +15,7 @@
 
 // export default App
 
-// 
+
 // import Cat from './Cat'
 // function App() { 
 
@@ -28,52 +28,55 @@
 //   )
 // }
 
-//export default App;
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import Home from "./Home";
-// import About from "./About";
-// import Contact from "./Contact";
-// import './Table.css';
-// function App() {
-//   return (
-//     <Router>
-//       <table className="layout-table">
-//         <thead>
-//           <tr>
-//             <td className="logo-cell"><Link to="/home">O ABC</Link></td>
-//             <td colSpan="3" className="nav-cell">
-//               <nav>
-//                 <ul className="nav-links">
-//                   <li><Link to="/home">HOME</Link></li>
-//                   <li><Link to="/about">About</Link></li>
-//                   <li><Link to="/contact">Contact</Link></li>
-//                 </ul>
-//               </nav>
-//             </td>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           <tr>
-//             <td colSpan="4" className="content-cell">
-//               <Routes>
-//                 <Route path="/home" element={<Home />} />
-//                 <Route path="/about" element={<About />} />
-//                 <Route path="/contact" element={<Contact />} />
-//               </Routes>
-//             </td>
-//           </tr>
-//         </tbody>
-//         <tfoot>
-//           <tr>
-//             <td colSpan="4" className="footer-cell">copyright</td>
-//           </tr>
-//         </tfoot>
-//       </table>
-//     </Router>
-//   );
-// }
-
 // export default App;
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import './Table.css';
+import Task6 from "./Task6";
+function App() {
+  return (
+    <Router>
+      <table className="layout-table">
+        <thead>
+          <tr>
+            <td className="logo-cell"><Link to="/home">O ABC</Link></td>
+            <td colSpan="3" className="nav-cell">
+              <nav>
+                <ul className="nav-links">
+                  <li><Link to="/home">HOME</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colSpan="4" className="content-cell">
+              <Routes>
+                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/params/:id" element={<Task6 />} />
+
+              </Routes>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="4" className="footer-cell">copyright</td>
+          </tr>
+        </tfoot>
+      </table>
+    </Router>
+  );
+}
+
+export default App;
 
 // import { Component } from "react" 
 // import './App.css'
@@ -137,27 +140,27 @@
 // }
 // export default App
 
-import React, { createContext, useState } from "react"
+// import React, { createContext, useState } from "react"
 
-import Hen from "./Hen";
-export let nameContext=createContext();
-function App(){
+// import Hen from "./Hen";
+// export let nameContext=createContext();
+// function App(){
 
-    let [colour,setColour]=useState("black");
-    let [bg,setBg]=useState("white")
+//     let [colour,setColour]=useState("black");
+//     let [bg,setBg]=useState("white")
 
-    function name(){
-      setColour(colour==="black"? "white": "black")
-      setBg(bg==="white"? "Black" : "white")
-    }
+//     function name(){
+//       setColour(colour==="black"? "white": "black")
+//       setBg(bg==="white"? "Black" : "white")
+//     }
     
-    return(
-      <>
-      <nameContext.Provider value={{colour,bg}}>
-        <Hen></Hen> 
-        <button onClick={name}>Click</button> 
-      </nameContext.Provider>
-      </>
-    )
-}
-export default App;
+//     return(
+//       <>
+//       <nameContext.Provider value={{colour,bg}}>
+//         <Hen></Hen> 
+//         <button onClick={name}>Click</button> 
+//       </nameContext.Provider>
+//       </>
+//     )
+// }
+// export default App;
